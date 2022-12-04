@@ -11,8 +11,26 @@ button {
 
 table {
   width: 100%;
+  text-align: center;
 }
 td {
   text-align: center;
   height: 32px;
+  cursor: pointer;
+}
+
+td.green {
+  background-color: greenyellow;
+}
+
+td.pink {
+  background-color: palevioletred;
+  font-weight: bold;
+  color: #fff;
+}
+
+.e-center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
