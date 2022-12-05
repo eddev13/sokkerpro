@@ -13,10 +13,15 @@ table {
   width: 100%;
   text-align: center;
 }
+tbody.games td {
+  cursor: pointer;
+}
+
 td {
   text-align: center;
-  height: 32px;
-  cursor: pointer;
+  height: 52px;
+  margin-bottom: 8px;
+  /* cursor: pointer; */
 }
 
 td.green {

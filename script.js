@@ -1,3 +1,10 @@
+const currentDate = () => {
+  const year = new Date().getFullYear();
+  const mouth = new Date().getMonth() + 1;
+  const day = new Date().getDate();
+  return `${year}-${mouth}-${day}`;
+};
+
 const getAllGamesToday = async (date) => {
   const modal_title = document.querySelector(".modal-title");
 
@@ -128,7 +135,7 @@ const getAllGamesToday = async (date) => {
       }`;
 
       //OVER 0.5 FT
-      if (teamsStats_05 > avg_league_05) {
+      if (teamsStats_05 >= avg_league_05) {
         td_avg_probability_05.classList.remove("pink");
         td_avg_probability_05.classList.add("green");
         // td_avg_probability_05.classList.add("green");
@@ -146,7 +153,7 @@ const getAllGamesToday = async (date) => {
       }
 
       //OVER 1.5 FT
-      if (teamsStats_15 > avg_league_15) {
+      if (teamsStats_15 >= avg_league_15) {
         td_avg_probability_15.classList.remove("pink");
         td_avg_probability_15.classList.add("green");
         td_avg_league_15.innerHTML = `${avg_league_15.toFixed(2)}%`;
@@ -163,7 +170,7 @@ const getAllGamesToday = async (date) => {
       }
 
       //OVER 2.5 FT
-      if (teamsStats_25 > avg_league_25) {
+      if (teamsStats_25 >= avg_league_25) {
         td_avg_probability_25.classList.remove("pink");
         td_avg_probability_25.classList.add("green");
         td_avg_league_25.innerHTML = `${avg_league_25.toFixed(2)}%`;
@@ -182,4 +189,4 @@ const getAllGamesToday = async (date) => {
   });
 };
 
-getAllGamesToday("2022-12-04");
+getAllGamesToday(currentDate());
